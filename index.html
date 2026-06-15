@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <header class="topbar">
+    <div class="brand">2fivy</div>
+    
+  </header>
+
+  <section class="controls">
+    <div class="left">
+      <label for="minutes">Quiz length (minutes)</label>
+      <input id="minutes" type="range" min="0.5" max="30" step="0.5" value="1">
+      <div class="minutes-display">1:00</div>
+    </div>
+
+    <div class="right">
+      <button id="startBtn" class="primary">Start</button>
+      <button id="pauseBtn" disabled>Pause</button>
+      <button id="resetBtn">Reset</button>
+      <button id="redirectBtn" class="accent">Go to vibe social</button>
+    </div>
+  </section>
+
+  <section class="typing-area">
+    <div class="meta">
+      <div class="timer" id="timer">00:00</div>
+      <div class="wpm" id="wpm">WPM: 0</div>
+    </div>
+
+    <div class="sentence-box" id="sentenceBox" aria-live="polite"></div>
+
+    <textarea id="input" placeholder="Start typing..." rows="3" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+
+    <div class="status">
+      <div id="capsWarning" class="caps hidden">Oops! you have caps lock on turn off please</div>
+      <div id="progress">Accuracy: 100% • Errors: 0</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="stats" id="finalStats"></div>
+  </footer>
+</main>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
